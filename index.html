@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bellamkonda Govardhan Siva Sai - Portfolio</title>
+  <meta name="keywords" content="portfolio, resume, java, full-stack, machine learning, developer, programming">
+  <meta name="author" content="Bellamkonda Govardhan Siva Sai">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <!-- MailtoUI CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/mailtoui@1.0.3/dist/mailtoui-min.css" rel="stylesheet">
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --secondary-color: #6c757d;
+      --bg-color: #f8f9fa;
+      --text-color: #333;
+      --white: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-color);
+      color: var(--text-color);
+    }
+
+    .navbar {
+      background-color: var(--white);
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand {
+      font-size: 1.8rem;
+      font-weight: 600;
+      color: var(--primary-color) !important;
+    }
+
+    .navbar-nav .nav-link {
+      font-size: 1.1rem;
+      color: var(--text-color);
+      margin-left: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    .navbar-nav .nav-link:hover {
+      color: var(--primary-color);
+    }
+
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      background: linear-gradient(135deg, var(--primary-color), #4dabf7);
+      color: var(--white);
+      position: relative;
+    }
+
+    .hero .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .hero .content {
+      max-width: 600px;
+      text-align: center;
+    }
+
+    .hero h1 {
+      font-size: 3.5rem;
+      font-weight: 700;
+    }
+
+    .hero h1 span {
+      color: #ffd700;
+    }
+
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+    }
+
+    .hero .btn {
+      font-size: 1.1rem;
+      padding: 0.8rem 2rem;
+      margin-right: 1rem;
+    }
+
+    .hero .social-icons a {
+      color: var(--white);
+      font-size: 1.8rem;
+      margin-right: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .hero .social-icons a:hover {
+      transform: scale(1.2);
+    }
+
+    section {
+      padding: 5rem 0;
+    }
+
+    .section-heading {
+      font-size: 2.5rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .education .card {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .education .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .skills .progress {
+      height: 1.5rem;
+      background-color: #e9ecef;
+      border-radius: 1rem;
+      overflow: hidden;
+    }
+
+    .skills .progress-bar {
+      background-color: var(--primary-color);
+      transition: width 2s ease-in-out;
+    }
+
+    .projects .card {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .projects .card:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .projects .btn {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+      margin-right: 0.5rem;
+    }
+
+    .certifications .list-group-item {
+      border: none;
+      padding: 1rem;
+      background-color: var(--white);
+      box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+      margin-bottom: 1rem;
+      transition: transform 0.3s ease;
+    }
+
+    .certifications .list-group-item:hover {
+      transform: translateX(10px);
+    }
+
+    .leadership .card {
+      border: none;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .leadership .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .contact .contact-infos {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact .contact-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact .contact-block__header {
+      font-size: 1.2rem;
+      font-weight: 600;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .contact .contact-block__content a {
+      color: var(--text-color);
+      text-decoration: none;
+      font-size: 1rem;
+    }
+
+    .contact .contact-block__content a:hover {
+      color: var(--primary-color);
+      text-decoration: underline;
+    }
+
+    .contact .btn-primary {
+      background-color: var(--primary-color);
+      border: none;
+      padding: 0.8rem 2rem;
+      font-size: 1.1rem;
+      width: 100%;
+      text-align: center;
+    }
+
+    .footer {
+      background-color: var(--primary-color);
+      color: var(--white);
+      padding: 2rem 0;
+      text-align: center;
+    }
+
+    .footer a {
+      color: var(--white);
+      margin: 0 1rem;
+      font-size: 1.5rem;
+    }
+
+    .footer a:hover {
+      color: #ffd700;
+    }
+
+    @media (max-width: 768px) {
+      .hero h1 {
+        font-size: 2.5rem;
+      }
+
+      .hero p {
+        font-size: 1rem;
+      }
+
+      .section-heading {
+        font-size: 2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">Govardhan Siva Sai</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
+          <li class="nav-item"><a class="nav-link" href="#skills">Skills</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
+          <li class="nav-item"><a class="nav-link" href="#leadership">Leadership</a></li>
+          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="container" data-aos="fade-up">
+      <div class="content">
+        <h1>Hi I'm <span><br>Govardhan Siva Sai</span></h1>
+        <p>A passionate Java Full-Stack Developer and Machine Learning enthusiast, building innovative web applications and data-driven solutions.</p>
+        <div class="social-icons my-3">
+          <a href="https://www.linkedin.com/in/govardhan-siva-sai-3a1a721b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+          <a href="https://github.com/Govardhan2302" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="mailto:bgss.2302@gmail.com" class="mailtoui"><i class="fas fa-envelope"></i></a>
+        </div>
+        <a href="resume.pdf" class="btn btn-light" download>Download Resume</a>
+        <a href="#contact" class="btn btn-outline-light">Hire Me</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Education Section -->
+  <section id="education" class="education">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Education</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" data-aos="zoom-in">
+          <div class="card p-4">
+            <h4>B.Tech in IT</h4>
+            <p>Vasireddy Venkatadri Institute of Technology, Guntur</p>
+            <p>2023 - 2026 | CGPA: 7.61</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4">
+            <h4>Diploma in Computer Engineering</h4>
+            <p>Smt. B. Seetha Polytechnic, Guntur</p>
+            <p>2020 - 2023 | CGPA: 8.0</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4">
+            <h4>High School</h4>
+            <p>Geetham High School</p>
+            <p>2020 | CGPA: 10.0</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="skills bg-light">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Technical Skills</h2>
+      <div class="row">
+        <div class="col-md-6 mb-3" data-aos="fade-right">
+          <h5>Java</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 85%;" aria-valuenow="85" aria-valuemin="0" aria-valuemax="100">85%</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3" data-aos="fade-left">
+          <h5>Python</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3" data-aos="fade-right" data-aos-delay="100">
+          <h5>HTML/CSS</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 90%;" aria-valuenow="90" aria-valuemin="0" aria-valuemax="100">90%</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3" data-aos="fade-left" data-aos-delay="100">
+          <h5>JavaScript</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 75%;" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100">75%</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3" data-aos="fade-right" data-aos-delay="200">
+          <h5>SQL</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 80%;" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100">80%</div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-3" data-aos="fade-left" data-aos-delay="200">
+          <h5>Machine Learning</h5>
+          <div class="progress">
+            <div class="progress-bar" role="progressbar" style="width: 70%;" aria-valuenow="70" aria-valuemin="0" aria-valuemax="100">70%</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="projects">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Projects</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" data-aos="zoom-in">
+          <div class="card p-4">
+            <h4>QuickServe: Local Service Finder</h4>
+            <p>A web app connecting users with local service providers using React, Spring Boot, MySQL, and a chatbot.</p>
+            <p><strong>Status:</strong> Ongoing</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4">
+            <h4>VVIT ACM Website Clone</h4>
+            <p>Recreated the VVIT ACM site with HTML, CSS, and JavaScript to showcase events and student achievements.</p>
+            <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+            <div class="mt-2">
+              <a href="https://github.com/Govardhan2302/ACM_WEBMASTER" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+              <a href="https://idyllic-daffodil-9e7746.netlify.app/" target="_blank" class="btn btn-primary btn-sm">Live Site</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4">
+            <h4>Walmart Sales Data Analysis</h4>
+            <p>Analyzed retail data using SQL to identify trends and customer behaviors.</p>
+            <p><strong>Tech:</strong> SQL</p>
+            <div class="mt-2">
+              <a href="https://github.com/Govardhan2302/Walmart-Sparkathon" target="_blank" class="btn btn-outline-primary btn-sm">GitHub</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="300">
+          <div class="card p-4">
+            <h4>Hostel Management System</h4>
+            <p>A C-based system to streamline hostel operations and reduce manual errors.</p>
+            <p><strong>Tech:</strong> C</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Certifications Section -->
+  <section id="certifications" class="certifications bg-light">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Certifications</h2>
+      <ul class="list-group">
+        <li class="list-group-item" data-aos="fade-right">Foundations of Modern Machine Learning – HUBDATA (3 Semesters, IIIT Hyderabad Faculty)</li>
+        <li class="list-group-item" data-aos="fade-right" data-aos-delay="100">Summer of AI Internship – Swecha (1 Month)</li>
+        <li class="list-group-item" data-aos="fade-right" data-aos-delay="200">NPTEL Courses: Java Programming, DBMS, Python</li>
+        <li class="list-group-item" data-aos="fade-right" data-aos-delay="300">AICTE & EduSkills Internships: Android, Java, Web Full Stack, Process Mining</li>
+        <li class="list-group-item" data-aos="fade-right" data-aos-delay="400">Hackathons: DevAstra'25, SIH Internal Hackathon</li>
+        <li class="list-group-item" data-aos="fade-right" data-aos-delay="500">
+          <a href="https://drive.google.com/drive/folders/1wC8O5QHPDU4LogCcxiXyEDqPU2y8KIrN" target="_blank">View All Certificates</a>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Leadership Section -->
+  <section id="leadership" class="leadership">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Leadership & Initiatives</h2>
+      <div class="row">
+        <div class="col-md-4 mb-4" data-aos="zoom-in">
+          <div class="card p-4">
+            <h4>Draft Head, Bharat Blockchain Network</h4>
+            <p>Facilitated blockchain education and student outreach programs.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="100">
+          <div class="card p-4">
+            <h4>ACM Student Chapter Member</h4>
+            <p>Contributed to technical sessions and workshops.</p>
+          </div>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="zoom-in" data-aos-delay="200">
+          <div class="card p-4">
+            <h4>Placement Coordinator</h4>
+            <p>Organized campus recruitment and coordinated with HRs.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="contact bg-light">
+    <div class="container">
+      <h2 class="section-heading" data-aos="fade-up">Contact Me</h2>
+      <div class="contact-infos">
+        <div class="row">
+          <div class="col-12 mb-4">
+            <div class="contact-block">
+              <h5 class="contact-block__header">Email</h5>
+              <p class="contact-block__content">
+                <a class="mailtoui" href="mailto:bgss.2302@gmail.com">bgss.2302@gmail.com</a>
+              </p>
+            </div>
+          </div>
+          <div class="col-12 text-center">
+            <a href="mailto:bgss.2302@gmail.com" class="mailtoui btn btn-primary">Let's Talk</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="social-icons mb-3">
+        <a href="https://www.linkedin.com/in/govardhan-siva-sai-3a1a721b3/" target="_blank"><i class="fab fa-linkedin"></i></a>
+        <a href="https://github.com/Govardhan2302" target="_blank"><i class="fab fa-github"></i></a>
+        <a href="mailto:bgss.2302@gmail.com" class="mailtoui"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>© 2025 Bellamkonda Govardhan Siva Sai. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <!-- MailtoUI JS -->
+  <script src="https://cdn.jsdelivr.net/npm/mailtoui@1.0.3/dist/mailtoui-min.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Initialize MailtoUI
+    MailtoUI.init();
+  </script>
+</body>
+</html>
